@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ca.csf.connect4_android.GameView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".GameController">
+
+    <EditText
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/address_field"
+        android:hint="@string/address_field_hint"
+        android:layout_above="@+id/text_log"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/port_field"
+        android:text="1337"
+        android:inputType="number"
+        android:layout_alignTop="@+id/address_field"
+        android:layout_toEndOf="@+id/address_field" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect"
+        android:onClick="connectToServer"
+        android:id="@+id/connect_button"
+        android:layout_above="@+id/text_log"
+        android:layout_toEndOf="@+id/port_field" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:text="Log\n"
+        android:id="@+id/text_log"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/address_field"
+        android:editable="false"
+        android:scrollbars="vertical"
+        android:fontFamily="Roboto Mono" />
+
+    <TableLayout
+        android:id="@+id/table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:outlineProvider="bounds"></TableLayout>
+
+</ca.csf.connect4_android.GameView>
