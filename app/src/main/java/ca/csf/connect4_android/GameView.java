@@ -106,4 +106,8 @@ public class GameView extends RelativeLayout implements Observer{
     public void gameResigned(String s) {
         log.append("Game resigned\n");
     }
+
+    public void logLine(String l) {
+        log.append(l + "\n");
+    }
 }
