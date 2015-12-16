@@ -3,6 +3,7 @@ package ca.csf.connect4_android;
 import android.content.Context;
 import android.text.method.ScrollingMovementMethod;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -48,6 +49,13 @@ public class GameView extends RelativeLayout implements Observer{
             btn.setText(Integer.toString(i));
             btn.setMinWidth(0);
             btn.setMinHeight(0);
+            btn.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ((GameController)view.getContext())
+                            .dropToken(Integer.parseInt((String) ((Button)view).getText()));
+                }
+            });
             btnRow.addView(btn);
             buttonRow[i] = btn;
         }

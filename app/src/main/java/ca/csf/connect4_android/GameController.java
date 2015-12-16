@@ -60,6 +60,10 @@ public class GameController extends AppCompatActivity {
         }
     }
 
+    public void dropToken(int col) {
+        System.out.println(col);
+    }
+
     private class ClientListener implements IClientListener {
         @Override
         public void disconnected() {
